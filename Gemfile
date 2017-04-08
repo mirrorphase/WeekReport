@@ -39,14 +39,20 @@ gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
 #therubyrhino - Mozilla Rhino embedded within JRuby
 #gem 'therubyrhino'
 
-#bootstrap gem
+#bootstrap gem 样式等
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
+#图标
 gem 'font-awesome-rails'
 
+#表单
 gem 'simple_form'
 
+#用户验证
 gem 'devise'
+
+#解决windows上的Bcrypt 3.1.11 - Cannot load file on Windows的问题
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

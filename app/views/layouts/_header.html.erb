@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><i class="fa fa-book" aria-hidden="true"></i>周报管理系统</a>
+      <%= link_to "<i class='fa fa-book' aria-hidden='true'></i>周报管理系统".html_safe, root_path, class: "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -16,7 +16,14 @@
       
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <% if current_user %>
+          <li> <%= link_to "用户设定", edit_user_registration_path %></li>
+          <li> <%= link_to "注 销", destroy_user_session_path, method: :delete %></li>
+        <%else%>
+          <li> <%= link_to "使用说明", about_path %></li>
+          <li> <%= link_to "登 录", new_user_session_path %></li>
+        <%end%>
+
         <li class="dropdown">
           
           <ul class="dropdown-menu">
