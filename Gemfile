@@ -42,7 +42,7 @@ gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
 #bootstrap gem
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
-
+gem 'font-awesome-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
