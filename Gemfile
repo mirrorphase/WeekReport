@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '5.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -32,6 +32,17 @@ gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+#therubyracer - Google V8 embedded within Ruby
+#gem 'therubyracer'
+
+#therubyrhino - Mozilla Rhino embedded within JRuby
+#gem 'therubyrhino'
+
+#bootstrap gem
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
