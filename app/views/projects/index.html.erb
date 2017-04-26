@@ -1,0 +1,24 @@
+<h1>项目列表</h1>
+ 
+<table class="table table-striped">
+  <tr>
+    <th>项目名称</th>
+    <th>备注</th>
+    <th colspan=2>操作</th>
+    
+  </tr>
+ 
+  <% @project.each do |project| %>
+    <tr>
+      <td><%= project.title %></td>
+      <td><%= project.remark %></td>
+      <td><%= link_to '查看详情', project_path(project) %> 
+      <%= link_to '修改项目', edit_project_path(project) %> 
+      <%= link_to '删除项目', project_path(project),
+              method: :delete,
+              data: { confirm: '你确认要删除所选项目?' } %>
+      </td>
+
+    </tr>
+  <% end %>
+</table>

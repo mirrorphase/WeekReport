@@ -1,0 +1,12 @@
+<p>
+  <strong>项目名称:</strong>
+  <%= @project.title %>
+</p>
+ 
+<p>
+  <strong>备注:</strong>
+  <%= @project.remark %>
+</p>
+
+<%= link_to '修改项目', edit_project_path(@project) %>
+<%= link_to '返回项目列表', projects_path %>
