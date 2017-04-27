@@ -44,8 +44,9 @@ class ProjectsController < ApplicationController
   		 redirect_to projects_path
 	end
 
+  
 	private
 	  def project_params
-	  	params.require(:project).permit(:title, :remark, :project_type, :system, :DevelopBy, :TestBy, :ScheduledStartDate, :ScheduledFinishDate)	
+	  	params.require(:project).permit(:title, :remark, :project_type, :system, {:DevelopBy => []}, {:TestBy => []}, :ScheduledStartDate, :ScheduledFinishDate)	
 	  end
 end

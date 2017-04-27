@@ -1,15 +1,52 @@
-<h2>Log in</h2>
+<div class="container-fluid">
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+	<div class = "row">
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+		<div class ="col-sm-10 col-md-offset-1 jumbotron" >
+			<h2 class ="col-sm-10 col-md-offset-3"><strong><i class="fa fa-book" aria-hidden="true"></i> Weekly Report 周报管理系统</strong></h2>
 
-<%= render "devise/shared/links" %>
+				<div class="well well-lg col-sm-6 col-md-offset-3">
+
+
+						<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>   
+
+	    					<%= f.input :email, required: false, autofocus: true, placeholder: "example@chukou1.com",:label => '登陆账号'%>
+	    					 <%= f.input :password, required: false, :label => '账号密码'%>
+
+
+	   							<%= f.input :remember_me , :label => "记住我", as: :boolean if devise_mapping.rememberable?%> 
+
+	   							
+
+	   							<%= f.button :submit, "登 陆", class: "btn btn-success" ,  class: "btn btn-primary btn-block" %>    
+	   							<br/>					
+	    					
+								<div class = "col-md-offset-10">
+                                    <%= link_to "取回密码", new_password_path(resource_name)%>
+	    						</div>
+	    					
+	  
+						<% end %>
+
+					
+						
+				</div>
+				
+
+   			</div>
+
+		</div>
+
+	</div>	
+
+	<div class = "row">
+		<div class = "col-md-offset-10">
+            <%= render "devise/shared/links" %>
+	    </div>
+		
+			
+	</div>
+
+</div>
+
+
