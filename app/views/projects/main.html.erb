@@ -1,10 +1,60 @@
+<div class = "container">
+	<ol class="breadcrumb">
+  		<li><a href="#">周报管理系统</a></li>
+  		<li class="active">主页</li>  		
+	</ol>
+
+	<div class = "well well-lg">
+     
+		<ul class="nav nav-tabs nav-justified" >
+			<%= link_to '新增项目', new_project_path, :role =>"button", :class=>"btn btn-primary btn-lg" %>
+			<%= link_to '填写周报', new_project_path, :role =>"button", :class=>"btn btn-primary btn-lg" %>
+			<%= link_to '个人周报查询', new_project_path, :role =>"button", :class=>"btn btn-primary btn-lg" %>
+		</ul>		
+
+	</div>
+
+	<div class ="jumbotron">
+		<div class="row">
+		  <div class="col-sm-8 col-md-6">
+		  	<h4>最近新增的测试工作项目</h4>
+ 
+			<table class="table table-striped">
+  			<tr>
+  			  <th>项目名称</th>
+   			 <th>测试负责人</th>
+   			 <th colspan=2>操作</th>
+    
+ 			 </tr>
+ 
+			  <% @project.each do |project| %>
+			    <tr>
+			      <td><%= project.title %></td>
+			      <td><%= project.TestBy %></td>
+			      <td><%= link_to '查看详情', project_path(project) %> 
+			      <%= link_to '修改项目', edit_project_path(project) %> 			      
+			      </td>
+
+   				 </tr>
+  				<% end %>
+			</table>
+		  </div>
+
+		  <div class="col-sm-8 col-md-6">
+		  	<h4>最近填写的周报</h4>
+		</div>
+		</div>
+
+		
+
+	</div>
+
+</div>
+
+
 <div class ="jumbotron">
-<h1><i class="fa fa-book" aria-hidden="true"></i> Weekly Report <small>周报管理系统</small></h1>
-<p>周报管理系统</p>
 
 <%= link_to '项目列表', controller: 'projects' %>
 <%= link_to '新增项目', new_project_path %>
-<%= link_to "登 录",new_user_session_path,class:"btn btn-primary btn-lg"%>
-
 
 </div>

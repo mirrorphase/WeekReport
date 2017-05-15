@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/widgets/datepicker
 //= require twitter/bootstrap
 //= require turbolinks
+//= require select2
+//= require select2_locale_zh-cn
 //= require_tree .

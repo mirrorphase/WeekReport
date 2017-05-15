@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424143826) do
+ActiveRecord::Schema.define(version: 20170509150415) do
+
+  create_table "developers", force: :cascade do |t|
+    t.string "developer_name"
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -27,6 +31,10 @@ ActiveRecord::Schema.define(version: 20170424143826) do
     t.datetime "FinishDate"
     t.decimal  "Progress"
     t.integer  "TestCaseRun"
+  end
+
+  create_table "testers", force: :cascade do |t|
+    t.string "tester_name"
   end
 
   create_table "users", force: :cascade do |t|

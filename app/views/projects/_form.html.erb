@@ -14,28 +14,39 @@
   <% end %>
 
   <p>
-    <%= f.label :项目名称 %> *<br>
-    <%= f.text_field :title, :style => "width:450px;" %> <span id="helpBlock2" class="help-block" >当前0字/最多100字 *</span>
+    <%= f.label :项目名称 %>
+    <%= f.text_field :title, :style => "width:450px;" %>* <span id="helpBlock2" class="help-block" >当前0字/最多100字 *</span>
   </p>
 
+<div class="form-inline">
+  <div class="input-group input-group-sm">
    <p>
-  <%= f.label :计划起止时间%> *<br> 
+  <%= f.label :计划开始时间%>*
 
-   <%= f.date_select :ScheduledStartDate, :order => [:year,:month,:day] ,:class => 'datepicker'  %> <%= f.label :至%> <%= f.date_select :ScheduledFinishDate, :order => [:year,:month,:day] %> 
+   <%= f.text_field :ScheduledStartDate, class: "project_start_date form-control", style: "z-index:1000;position:relative;width:225px;" %>
+   </p>
+   </div>
+   <div class="input-group input-group-sm">
+   <p>
+   <%= f.label :计划结束时间%>*
+   <%= f.text_field :ScheduledFinishDate, class: "project_start_date form-control", style: "z-index:1000;position:relative;width:225px;" %>
 
    </p>
+
+   </div>
+   </div>
 
  
   <div class="form-inline">
   <div class="input-group input-group-sm">
    <p>
-    <%= f.label :项目类型 %> *<br>
+    <%= f.label :项目类型 %> *
     <%= f.select(:project_type, ['维护项目','新项目','组内任务'],{ :prompt => "请选择"},{:class => "form-control",:style => "width:225px;"}) %>
      </p>
      </div>
      <div class="input-group input-group-sm">
  <p>
-    <%= f.label :所属系统%> *<br>
+    <%= f.label :所属系统, :required => true%>
     <%= f.select(:system, ['业务系统','产品报价系统（PRC）','供应商管理系统（SRM）','调度系统（TMS）','财务结算系统','收款易（Skyee）','报表系统(RPT)'],{ :prompt => "请选择"},{:class => "form-control",:style => "width:225px;"}) %>
   </p>
   </div>
@@ -43,14 +54,14 @@
   <div class="form-inline">
     <div class="form-group">
    <p>
-    <%= f.label :项目负责人%> *<br> 
-    <%= f.select :DevelopBy, options_for_select(["张子锴", "黄晓玲", "左蓉", "陈慧文"]), {}, {:multiple => true, :class => "form-control", :style => "width:225px;" } %>
+    <%= f.label :项目负责人%> 
+    <%= f.select :DevelopBy, options_for_select(["张子锴", "黄晓玲", "左蓉", "陈慧文", "test"]), {}, {:multiple => true, :class => "form-control", :style => "width:225px;" }%>*
   </p>
   </div>
       <div class="form-group">
   <p>
-    <%= f.label :测试负责人%> *<br> 
-    <%= f.select :TestBy, options_for_select(["林劼", "黄晓玲", "左蓉", "陈慧文"]), {}, {:multiple => true, :class => "form-control", :style => "width:225px;" } %>
+    <%= f.label :测试负责人%> 
+    <%= f.select :TestBy, options_for_select(["林劼", "黄晓玲", "左蓉", "陈慧文"]), {}, {:multiple => true,:class => "form-control", :style => "width:225px;"}%>*
   </p>
     </div>
     </div>

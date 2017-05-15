@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
+  
   devise_for :users
   
   #根据是否登陆的状态决定Root页面
   devise_scope :user do
     authenticated :user do
-      root :to => 'pages#index', as: :authenticated_root
+      root :to => 'projects#main', as: :authenticated_root
+      get '/users/sign_out' => 'devise/sessions#destroy'
     end
     unauthenticated :user do
       root :to => 'devise/sessions#new', as: :unauthenticated_root

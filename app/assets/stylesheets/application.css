@@ -11,6 +11,10 @@
  * file per style scope.
  *
  *= require font-awesome
+ *= require jquery-ui/datepicker
+ *= require select2-bootstrap
  *= require_tree
  *= require_self
  */
+ @import "select2";
+@import "select2-bootstrap";
