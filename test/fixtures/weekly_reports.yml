@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: MyString
+  : 
+  week: MyString
+  : 
+  projectid: MyString
+  : 
+  progress: MyString
+  : 9.99
+  remark: MyString
+  : MyText
+  reporter: MyString
+  : MyString
+  create_date: MyString
+  : 
+  edit_date: MyString
+  : 
+
+two:
+  year: MyString
+  : 
+  week: MyString
+  : 
+  projectid: MyString
+  : 
+  progress: MyString
+  : 9.99
+  remark: MyString
+  : MyText
+  reporter: MyString
+  : MyString
+  create_date: MyString
+  : 
+  edit_date: MyString
+  : 

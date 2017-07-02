@@ -16,5 +16,6 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require select2
-//= require select2_locale_zh-cn
+//= require chosen-jquery
+//= require bootstrap
 //= require_tree .

@@ -29,6 +29,7 @@ gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'select2-rails'
+gem 'chosen-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

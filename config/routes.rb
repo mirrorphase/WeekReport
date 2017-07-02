@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  resources :weekly_reports
   devise_for :users
   
   #根据是否登陆的状态决定Root页面

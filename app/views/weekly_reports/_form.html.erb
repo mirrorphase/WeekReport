@@ -1,0 +1,27 @@
+<%= simple_form_for(@weekly_report) do |f| %>
+  <%= f.error_notification %>
+<form class="form-inline">
+  <div class="form-group">
+  <%= f.label :年份 %>
+    <%= f.select :year, Date.today.year .. Date.today.year+1%>
+     
+     <%= f.label :周%>*
+
+   <%= f.text_field :week, value:Time.now.strftime("%U").to_i, class: "week_date form-control", style: "z-index:1000;position:relative;width:225px;" %>
+    </div>
+    <div class="form-group">
+      <%= f.input :projectid, :as=>:select, :collection=>Project.all, :class => "chosen-select form-control",:label => '项目'%>
+
+    <%= f.input :progress, required: true, autofocus: true, placeholder: Time.current.year ,:label => '进度%'%>
+    <%= f.input :remark, required: false, autofocus: true, placeholder: Time.current.year ,:label => '备注'%>
+
+    <%= f.input :reporter, placeholder: current_user.email, :label => '报告人', :disabled => true %>
+
+  </div>
+
+  <div class="form-actions">
+
+    <%= f.button :submit %>
+  </div>
+</form>
+<% end %>

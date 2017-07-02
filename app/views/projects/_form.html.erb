@@ -15,9 +15,8 @@
 
   <p>
     <%= f.label :项目名称 %>
-    <%= f.text_field :title, :style => "width:450px;" %>* <span id="helpBlock2" class="help-block" >当前0字/最多100字 *</span>
+    <%= f.text_field :title, :style => "width:525px;" %>* <span id="helpBlock2" class="help-block" >当前0字/最多100字 *</span>
   </p>
-
 <div class="form-inline">
   <div class="input-group input-group-sm">
    <p>
@@ -41,13 +40,13 @@
   <div class="input-group input-group-sm">
    <p>
     <%= f.label :项目类型 %> *
-    <%= f.select(:project_type, ['维护项目','新项目','组内任务'],{ :prompt => "请选择"},{:class => "form-control",:style => "width:225px;"}) %>
+    <%= f.select(:project_type, @project_type,{ :prompt => "请选择"},{:class => "form-control",:style => "width:225px;"}) %>
      </p>
      </div>
      <div class="input-group input-group-sm">
  <p>
     <%= f.label :所属系统, :required => true%>
-    <%= f.select(:system, ['业务系统','产品报价系统（PRC）','供应商管理系统（SRM）','调度系统（TMS）','财务结算系统','收款易（Skyee）','报表系统(RPT)'],{ :prompt => "请选择"},{:class => "form-control",:style => "width:225px;"}) %>
+    <%= f.select(:system, @system,{ :prompt => "请选择"},{:class => "form-control",:style => "width:225px;"}) %>
   </p>
   </div>
 </div>
@@ -55,13 +54,18 @@
     <div class="form-group">
    <p>
     <%= f.label :项目负责人%> 
-    <%= f.select :DevelopBy, options_for_select(["张子锴", "黄晓玲", "左蓉", "陈慧文", "test"]), {}, {:multiple => true, :class => "form-control", :style => "width:225px;" }%>*
+    <%= f.select :DevelopBy, options_for_select(@developer), {}, {:multiple => true, :class => "chosen-select form-control", :style => "width:230px;" }%>*
   </p>
   </div>
+   
+     <div class="form-group">
+   
+  </div>
+
       <div class="form-group">
   <p>
     <%= f.label :测试负责人%> 
-    <%= f.select :TestBy, options_for_select(["林劼", "黄晓玲", "左蓉", "陈慧文"]), {}, {:multiple => true,:class => "form-control", :style => "width:225px;"}%>*
+    <%= f.select :TestBy, options_for_select(@tester), {}, {:multiple => true,:class => "form-control chosen-select", :style => "width:225px;"}%>*
   </p>
     </div>
     </div>
@@ -69,11 +73,11 @@
 
   <p>
     <%= f.label :备注 %><br>
-    <%= f.text_area :remark, :style => "width:450px;" %>
+    <%= f.text_area :remark, :style => "width:525px;" %>
   </p>
  
   <p>
-    <%= f.submit %>
+    <%= f.submit  %>
   </p>
  
 <% end %>

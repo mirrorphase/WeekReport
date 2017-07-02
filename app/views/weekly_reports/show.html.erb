@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong> <%= @weekly_report.year %>年第<%= @weekly_report.week %>周</strong>
+ 
+</p>
+
+<p>
+  <strong>项目名称：</strong>
+  <%= @weekly_report.project.title %>
+</p>
+
+<p>
+  <strong>已完成</strong>
+  <%= @weekly_report.progress %><strong>%</strong>
+</p>
+
+<p>
+  <strong>备注</strong>
+  <%= @weekly_report.remark %>
+</p>
+
+<p>
+  <strong>报告人：</strong>
+  <%= @weekly_report.reporter %>
+</p>
+
+
+<p>
+  <strong>创建于：</strong>
+  <%= @weekly_report.created_at %>
+</p>
+
+
+<p>
+  <strong>修改于:</strong>
+  <%= @weekly_report.updated_at %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_weekly_report_path(@weekly_report) %> |
+<%= link_to 'Back', weekly_reports_path %>
